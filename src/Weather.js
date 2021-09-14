@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Weather.css";
 
 export default function Weather() {
+  const [city, setCity] = useState(null);
+
   let weatherData = {
     city: "New York",
     temperature: 19,
@@ -12,25 +14,38 @@ export default function Weather() {
     wind: 10,
   };
 
+  function handleSubmit(event) {
+    event.preventDefault();
+    console.log(city);
+  }
+
+  function storeCity(event) {
+    setCity(event.target.value);
+  }
+
+  let form = (
+    <form onSubmit={handleSubmit}>
+      <div className="input-group mb-3">
+        <input
+          type="search"
+          className="form-control"
+          placeholder="Enter a City..."
+          autoFocus="on"
+          autoComplete="off"
+          onChange={storeCity}
+        />
+        <input
+          className="btn btn-outline-secondary"
+          type="submit"
+          value="Search"
+        />
+      </div>
+    </form>
+  );
+
   return (
     <div className="Weather">
-      <form>
-        <div className="input-group mb-3">
-          <input
-            type="search"
-            className="form-control"
-            placeholder="Enter a City"
-            autoFocus="on"
-            autoComplete="off"
-          />
-          <input
-            className="btn btn-outline-secondary"
-            type="submit"
-            value="Search"
-          />
-        </div>
-      </form>
-
+      {form}
       <hr className="line-dividing" />
       <h1>{weatherData.city}</h1>
       <div className="row">
