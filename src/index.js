@@ -10,10 +10,16 @@ function App() {
       <div className="container mt-3">
         <Weather />
         <footer>
-          <a href="https://github.com/Lilish-Warrior/weather-app-react">
+          <a
+            href="https://github.com/Lilish-Warrior/weather-app-react"
+            className="footer-link"
+          >
             Open source code
           </a>{" "}
-          by <a href="https://github.com/Lilish-Warrior">Lilish Warrior </a>
+          by{" "}
+          <a href="https://github.com/Lilish-Warrior" className="footer-link">
+            Lilish Warrior{" "}
+          </a>
         </footer>
       </div>
     </div>
