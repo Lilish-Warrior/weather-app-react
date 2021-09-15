@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Weather.css";
 import axios from "axios";
 import Loader from "react-loader-spinner";
+import FormatedDate from "./FormatedDate";
 
 export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
@@ -13,6 +14,7 @@ export default function Weather(props) {
       ready: true,
       city: response.data.name,
       temperature: Math.round(response.data.main.temp),
+      date: new Date(response.data.dt * 1000),
       feels: Math.round(response.data.main.feels_like),
       description: response.data.weather[0].description,
       wind: Math.round(response.data.wind.speed),
@@ -68,6 +70,9 @@ export default function Weather(props) {
         <div className="row">
           <div className="col-4">
             <ul>
+              <li>
+                <FormatedDate date={weatherData.date} />
+              </li>
               <li>Feels like: {weatherData.feels}°C </li>
               <li className="text-capitalize"> {weatherData.description} </li>
               <li>Humidity: {weatherData.humidity}%</li>
