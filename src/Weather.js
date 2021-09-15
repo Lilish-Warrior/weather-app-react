@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Weather.css";
 import axios from "axios";
 import Loader from "react-loader-spinner";
-import FormatedDate from "./FormatedDate";
+import WeatherInfo from "./WeatherInfo";
 
 export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
@@ -67,38 +67,8 @@ export default function Weather(props) {
         {form}
         <hr className="line-dividing" />
         <h1>{weatherData.city}</h1>
-        <div className="row">
-          <div className="col-4">
-            <ul>
-              <li>
-                <FormatedDate date={weatherData.date} />
-              </li>
-              <li>Feels like: {weatherData.feels}°C </li>
-              <li className="text-capitalize"> {weatherData.description} </li>
-              <li>Humidity: {weatherData.humidity}%</li>
-              <li>Wind: {weatherData.wind} k/h</li>
-            </ul>
-          </div>
 
-          <div className="col-8">
-            <div className="weather-temperature">
-              <img
-                src={weatherData.imgUrl}
-                alt={weatherData.description}
-                className="icon"
-              />
-              <span className="bold-temperature">
-                <strong>{weatherData.temperature}</strong>
-              </span>
-              <span className="units">
-                <a href="/" className="active">
-                  °C{" "}
-                </a>
-                |<a href="/">°F</a>
-              </span>
-            </div>
-          </div>
-        </div>
+        <WeatherInfo data={weatherData} />
       </div>
     );
   } else {
