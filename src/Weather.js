@@ -1,20 +1,21 @@
 import React, { useState } from "react";
 import "./Weather.css";
 import axios from "axios";
+import Loader from "react-loader-spinner";
 
-export default function Weather() {
-  const [city, setCity] = useState(null);
-  const [statement, setStatement] = useState(false);
-  const [weatherData, setWeatherData] = useState({});
+export default function Weather(props) {
+  const [city, setCity] = useState(props.defaultCity);
+  const [weatherData, setWeatherData] = useState({ ready: false });
 
   function displayWeather(response) {
-    setStatement(true);
     console.log(response.data);
     setWeatherData({
+      ready: true,
       city: response.data.name,
       temperature: Math.round(response.data.main.temp),
       feels: Math.round(response.data.main.feels_like),
-      description: response.data.weather[0].main,
+      description: response.data.weather[0].description,
+      wind: Math.round(response.data.wind.speed),
       humidity: response.data.main.humidity,
       imgUrl: "https://ssl.gstatic.com/onebox/weather/64/sunny.png",
     });
@@ -23,6 +24,9 @@ export default function Weather() {
   function handleSubmit(event) {
     event.preventDefault();
     console.log(city);
+    search();
+  }
+  function search() {
     let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=98269c6efc2a2e14e6b32d6e0cd4f076&units=metric`;
     axios.get(apiURL).then(displayWeather);
   }
@@ -55,7 +59,7 @@ export default function Weather() {
     </form>
   );
 
-  if (statement) {
+  if (weatherData.ready) {
     return (
       <div className="Weather">
         {form}
@@ -65,14 +69,19 @@ export default function Weather() {
           <div className="col-4">
             <ul>
               <li>Feels like: {weatherData.feels}°C </li>
-              <li> {weatherData.description} </li>
+              <li className="text-capitalize"> {weatherData.description} </li>
               <li>Humidity: {weatherData.humidity}%</li>
+              <li>Wind: {weatherData.wind} k/h</li>
             </ul>
           </div>
 
           <div className="col-8">
             <div className="weather-temperature">
-              <img src={weatherData.imgUrl} alt="Clear" className="icon" />
+              <img
+                src={weatherData.imgUrl}
+                alt={weatherData.description}
+                className="icon"
+              />
               <span className="bold-temperature">
                 <strong>{weatherData.temperature}</strong>
               </span>
@@ -88,6 +97,7 @@ export default function Weather() {
       </div>
     );
   } else {
-    return <div className="Weather">{form}</div>;
+    search();
+    return <Loader type="ThreeDots" color="#a662ff" height={100} width={100} />;
   }
 }

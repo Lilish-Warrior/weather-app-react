@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <div className="container mt-3">
-        <Weather />
+        <Weather defaultCity="Mexico" />
         <footer>
           <a
             href="https://github.com/Lilish-Warrior/weather-app-react"
