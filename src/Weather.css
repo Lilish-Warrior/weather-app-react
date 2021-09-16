@@ -14,56 +14,18 @@
   border: 3px solid var(--scent-color);
 }
 
-.Weather .bold-temperature strong {
-  font-family: "Montserrat", sans-serif;
-  font-size: 60px;
-  font-weight: 400;
-  color: #504f4f;
-  line-height: 1;
-  position: relative;
-  top: -130px;
-  left: 140px;
-  padding: 2px, 10px 0px, 0px;
-}
-
-.Weather .units {
-  position: relative;
-  font-size: 16px;
-  top: -160px;
-  left: 150px;
-}
-
-.Weather .icon {
-  position: relative;
-  padding: 10px;
-  top: -50px;
-  left: 50px;
-  font-size: 50px;
-  color: var(--primary-color);
-}
-
 .Weather h1 {
   color: var(--primary-color);
-  font-family: "Raleway", sans-serif;
-  font-size: 30px;
+  font-family: pacifico;
+  font-size: 60px;
   line-height: 29px;
-  margin-bottom: 10px;
-  margin-top: 20px;
-}
-.Weather ul {
-  margin: 0;
-  padding: 0;
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
 }
 
-.Weather li {
-  list-style: none;
-  color: #757575;
-  font-family: "Montserrat", sans-serif;
-  font-size: 16px;
-}
-
-.Weather li:first-letter {
-  text-transform: capitalize;
+.Weather .form {
+  text-align: center;
 }
 
 .Weather .form-control {

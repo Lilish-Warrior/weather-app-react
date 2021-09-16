@@ -1,0 +1,28 @@
+.WeatherInfo .icon {
+  padding: 10px;
+  text-align: center;
+  font-size: 50px;
+  color: var(--primary-color);
+}
+
+.WeatherInfo .weather-temperature {
+  text-align: center;
+  padding-bottom: 30px;
+  margin-top: 40px;
+  margin-bottom: 70px;
+}
+
+.WeatherInfo ul {
+  text-align: center;
+}
+
+.WeatherInfo li {
+  list-style: none;
+  color: #757575;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+}
+
+.WeatherInfo li:first-letter {
+  text-transform: capitalize;
+}

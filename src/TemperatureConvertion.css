@@ -1,3 +1,26 @@
-.unit-link {
+.units {
   text-decoration: none;
+  color: var(--primary-color);
+  font-size: 20px;
+  position: relative;
+  top: -15px;
+  left: 10px;
+}
+
+.TemperatureConvertion strong {
+  font-family: "Montserrat", sans-serif;
+  font-size: 50px;
+  font-weight: 400;
+  color: #504f4f;
+  line-height: 1;
+  text-align: center;
+  padding: 2px, 10px 0px, 0px;
+}
+
+.active-unit {
+  color: #504f4f;
+  font-size: 20px;
+  position: relative;
+  top: -15px;
+  left: 10px;
 }

@@ -40,8 +40,8 @@ export default function Weather(props) {
 
   let form = (
     <form onSubmit={handleSubmit}>
-      <div className="row mb-3">
-        <div className="col-10">
+      <div className="row mb-3 form">
+        <div className="col-8">
           <input
             type="search"
             className="form-control"
@@ -51,7 +51,7 @@ export default function Weather(props) {
             onChange={storeCity}
           />
         </div>
-        <div className="col-2">
+        <div className="col-4">
           <input
             className="btn btn-outline-custom"
             type="submit"
@@ -68,7 +68,6 @@ export default function Weather(props) {
         {form}
         <hr className="line-dividing" />
         <h1>{weatherData.city}</h1>
-
         <WeatherInfo data={weatherData} />
       </div>
     );
