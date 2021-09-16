@@ -10,7 +10,6 @@
   border-radius: 10px;
 }
 
-
 .Weather .line-dividing {
   border: 3px solid var(--scent-color);
 }
@@ -19,7 +18,6 @@
   color: var(--primary-color);
   font-family: pacifico;
   font-size: 60px;
-  line-height: 29px;
   margin: 20px;
   padding: 20px;
   text-align: center;
