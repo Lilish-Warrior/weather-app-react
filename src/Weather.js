@@ -69,6 +69,7 @@ export default function Weather(props) {
         <hr className="line-dividing" />
         <h1>{weatherData.city}</h1>
         <WeatherInfo data={weatherData} />
+        <hr className="line-dividing" />
       </div>
     );
   } else {

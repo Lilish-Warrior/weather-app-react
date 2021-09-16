@@ -36,10 +36,10 @@ export default function TemperatureConvertion(props) {
           <strong>{Math.round(farenheit)}</strong>
         </span>
         <span>
+          <strong className="active-unit">°F |</strong>
           <a href="/" onClick={convertToCelsius} className="units">
-            °C{" "}
+            °C
           </a>
-          <strong className="active-unit">| °F</strong>
         </span>
       </div>
     );

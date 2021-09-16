@@ -7,12 +7,21 @@ import "./WeatherInfo.css";
 export default function WeatherInfo(props) {
   return (
     <div className="WeatherInfo">
-      <div className="icon">
-        <Icons code={props.data.icon} />
+      <div className="main-info">
+        <div className="row">
+          <div className="col-6">
+            <span className="icon">
+              <Icons code={props.data.icon} />
+            </span>
+          </div>
+          <div className="col-6">
+            <span className="weather-temperature">
+              <TemperatureConvertion celsius={props.data.temperature} />
+            </span>
+          </div>
+        </div>
       </div>
-      <div className="weather-temperature">
-        <TemperatureConvertion celsius={props.data.temperature} />
-      </div>
+
       <div>
         <ul>
           <li>
