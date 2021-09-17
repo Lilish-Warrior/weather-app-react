@@ -3,6 +3,7 @@ import "./Weather.css";
 import axios from "axios";
 import Loader from "react-loader-spinner";
 import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast";
 
 export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
@@ -70,6 +71,7 @@ export default function Weather(props) {
         <h1>{weatherData.city}</h1>
         <WeatherInfo data={weatherData} />
         <hr className="line-dividing" />
+        <WeatherForecast />
       </div>
     );
   } else {

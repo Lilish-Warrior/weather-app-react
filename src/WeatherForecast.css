@@ -1,0 +1,10 @@
+.WeatherForecast {
+  text-align: center;
+}
+.WeatherForecast li {
+  list-style: none;
+}
+.forecast-min {
+  font-weight: 200;
+  margin-left: 5px;
+}
