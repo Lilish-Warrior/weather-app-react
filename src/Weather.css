@@ -34,3 +34,9 @@
 .Weather .btn-outline-custom {
   border: 3px solid var(--scent-color);
 }
+
+@media (max-width: 450px) {
+  .Weather h1 {
+    font-size: 40px;
+  }
+}
