@@ -20,8 +20,6 @@ export default function Weather(props) {
       humidity: response.data.main.humidity,
       icon: response.data.weather[0].id,
       coordinates: response.data.coord,
-      latitude: response.data.coord.lat,
-      longitude: response.data.coord.lon,
     });
   }
 
@@ -72,8 +70,7 @@ export default function Weather(props) {
         <WeatherInfo data={weatherData} />
         <hr className="line-dividing" />
         <WeatherForecast
-          latitude={weatherData.latitude}
-          longitude={weatherData.longitude}
+         coordinates={weatherData.coordinates}
         />
       </div>
     );
