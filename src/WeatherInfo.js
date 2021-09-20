@@ -27,7 +27,6 @@ export default function WeatherInfo(props) {
           <li>
             <FormatedDate date={props.data.date} />
           </li>
-          <li>Feels like: {props.data.feels}°C </li>
           <li className="text-capitalize"> {props.data.description} </li>
           <li>Humidity: {props.data.humidity}%</li>
           <li>Wind: {props.data.wind} k/h</li>
